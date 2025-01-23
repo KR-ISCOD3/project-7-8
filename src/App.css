@@ -1,0 +1,50 @@
+/* ---- Background Color ---- */
+.bg-aqua-700{
+    background-color: #00865f !important;
+}
+.bg-aqua-600{
+    background-color: #00a772 !important;
+}
+.bg-aqua-500{
+    background-color: #00cd8b !important;
+}
+.bg-aqua-400{
+    background-color: #21e6a1 !important;
+}
+.bg-aqua-300{
+    background-color: #48f4b2 !important;
+}
+.bg-aqua-200{
+    background-color: #9efcd2 !important;
+}
+
+
+@media (max-width: 992px) {
+    .h-responesive{
+        height: 50% !important;
+    }
+}
+
+.s1-img{
+    background: url(https://assets-eu-01.kc-usercontent.com/77bbf83a-1306-0152-fea5-3b5eaf937634/ce30243a-b759-4747-ae74-a685a9eb2a35/GettyImages-1317610306.jpg);
+    background-size: cover ;
+    /* filter: brightness(5%); */
+    
+}
+
+
+.text-1line {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+ }
+
+ .text-3line {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+    -webkit-box-orient: vertical;
+ }
