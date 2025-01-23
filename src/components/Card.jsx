@@ -17,9 +17,9 @@ function Card() {
         ) : (
           product.map((e, i) => {
             return (
-              <div className="col-6 col-md-4 col-lg-3 my-2 " key={i}>
+              <div className="col-6 col-md-4 col-lg-3 my-1 my-lg-2 px-1 px-lg-3" key={i}>
                 <div className="card overflow-hidden font-jost shadow">
-                  <div style={{ height: 210 }} className="w-100">
+                  <div style={{ height: 210 }} className="w-100 h">
                     <img
                       src={e.image}
                       alt=""
@@ -28,12 +28,12 @@ function Card() {
                   </div>
                   <div className="card-body text-center">
                     <h4 className="text-1line">{e.name}</h4>
-                    <p className="text-3line">{e.description}</p>
+                    <p className="text-2line">{e.description}</p>
                     <div className="d-flex justify-content-between">
-                      <p className="fw-bold text-danger">${e.price}</p>
-                      <p>{e.rating} rating</p>
+                      <p className="fw-bold text-danger  ">${e.price.toFixed(1)}</p>
+                      <p>{e.rating} rating</p> 
                     </div>
-                    <div className="d-flex justify-content-center border-top py-1">
+                    <div className="d-flex justify-content-center border-top ">
                       <button className="btn border-0 fs-3 px-2">
                         <IoHeart />
                       </button>
