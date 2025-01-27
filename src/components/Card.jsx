@@ -5,7 +5,7 @@ import Skelaton from "./Skelaton";
 import { ToastContainer } from "react-toastify";
 
 function Card() {
-  const { product, loading,notify } = useContext(ProductContext);
+  const { product, loading,addToCart } = useContext(ProductContext);
   return (
     <div className="container p-0">
       <ToastContainer/>
@@ -37,7 +37,7 @@ function Card() {
                       <button className="btn border-0 fs-3 px-2">
                         <IoHeart />
                       </button>
-                      <button onClick={()=>notify('Product add to cart...🎂')} className="btn border-0 fs-3 px-2">
+                      <button onClick={()=>addToCart(e.id)} className="btn border-0 fs-3 px-2">
                         <IoCart />
                       </button>
                       <button className="btn border-0 fs-3 px-2">
