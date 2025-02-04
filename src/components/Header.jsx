@@ -1,11 +1,10 @@
-import { IoMdSearch } from "react-icons/io";
-import { IoMdCart } from "react-icons/io";
 import { useContext, useState } from "react";
+import { IoMdCart, IoMdSearch } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import ProductContext from "../store/ProductProvider";
 function Header() {
-  const {data} = useContext(ProductContext);
-  const [isLoggin,setIsloggin] = useState(true)
+  const { data, cart } = useContext(ProductContext);
+  const [isLoggin, setIsloggin] = useState(true);
 
   // alert(data);
   return (
@@ -35,38 +34,65 @@ function Header() {
             </form>
           </div>
           <div className="d-none d-lg-flex align-items-center justify-content-end col-3 ">
-            <a href="" className="text-light text-decoration-none position-relative ">
+            <NavLink
+              to="/cart"
+              className="text-light text-decoration-none position-relative "
+            >
               <IoMdCart className="fs-3" />
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                10  
+                {cart.length}
               </span>
-            </a>
-            {
-              isLoggin ? 
-              (<div className="ms-4">
+            </NavLink>
+            {isLoggin ? (
+              <div className="ms-4">
                 <div className="dropdown d-flex">
-                  <div style={{width:40,height:40}} className="rounded-circle bg-aqua-300 overflow-hidden border">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTenp49lG3DDWsWxhb2eiwRcDXva9Cs1aG7hA&s" alt="" className="w-100 h-100 object-fit-cover"/>
+                  <div
+                    style={{ width: 40, height: 40 }}
+                    className="rounded-circle bg-aqua-300 overflow-hidden border"
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTenp49lG3DDWsWxhb2eiwRcDXva9Cs1aG7hA&s"
+                      alt=""
+                      className="w-100 h-100 object-fit-cover"
+                    />
                   </div>
-                  <button className="btn border-0 shadow-none text-light dropdown-toggle ps-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <button
+                    className="btn border-0 shadow-none text-light dropdown-toggle ps-1"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     User account
                   </button>
                   <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">My Account</a></li>
-                    <li><a className="dropdown-item" href="#">Setting</a></li>
-                    <li><a className="dropdown-item" href="#">Log out</a></li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        My Account
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Setting
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Log out
+                      </a>
+                    </li>
                   </ul>
                 </div>
-              </div>):(           
-                <div className=" ms-4">
-                  <button className="btn btn-light rounded-0 px-3">Register</button>
-                  <button className="btn border rounded-0 text-light px-3">
-                    Login
-                  </button>
-                </div>
-              )
-            }
-
+              </div>
+            ) : (
+              <div className=" ms-4">
+                <button className="btn btn-light rounded-0 px-3">
+                  Register
+                </button>
+                <button className="btn border rounded-0 text-light px-3">
+                  Login
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </nav>
@@ -78,7 +104,7 @@ function Header() {
             </NavLink>
           </li>
           <li className="px-2 py-1 text-uppercase">
-            <NavLink to={'/product'} className="text-dark text-decoration-none">
+            <NavLink to={"/product"} className="text-dark text-decoration-none">
               All-Product
             </NavLink>
           </li>
