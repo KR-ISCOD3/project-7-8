@@ -84,9 +84,13 @@ export const ProductProdiver = ({ children }) => {
     );
   };
 
+  const DeleteCart = (productId)=>{
+    setCart((prev) => prev.filter((item) => item.id !== productId));
+  }
+
   return (
     <ProductContext.Provider
-      value={{ product, loading, addToCart, cart, handleQty }}
+      value={{ product, loading, addToCart, cart, handleQty,DeleteCart }}
     >
       {children}
     </ProductContext.Provider>

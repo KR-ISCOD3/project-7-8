@@ -3,7 +3,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import ProductContext from "../store/ProductProvider";
 
 function Cart() {
-  const { cart, handleQty } = useContext(ProductContext);
+  const { cart, handleQty,DeleteCart } = useContext(ProductContext);
   return (
     <div className="container py-5 ">
       <div className="col-10 mx-auto">
@@ -20,7 +20,7 @@ function Cart() {
               return (
                 <tr className="align-middle" key={i}>
                   <td className="d-flex align-items-center">
-                    <button className="me-2 btn btn-outline-danger">
+                    <button onClick={()=>DeleteCart(e.id)} className="me-2 btn btn-outline-danger">
                       <FaRegTrashAlt />
                     </button>
                     <div
